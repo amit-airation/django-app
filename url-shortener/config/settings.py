@@ -18,11 +18,11 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Configure environment variables
-env = environ.Env()
-# Read .env file
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+# env = environ.Env()
+# # Read .env file
+# environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-print(env("SAY_CONFIGURED"))
+# print(env("SAY_CONFIGURED"))
 
 
 # Quick-start development settings - unsuitable for production
@@ -32,7 +32,7 @@ print(env("SAY_CONFIGURED"))
 SECRET_KEY = 'django-insecure-&*peq8%z#rivas7i(f#fr@8r^j296$-bf9_4vby5l(y5d-78n_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DEBUG", default=True)
+# DEBUG = env.bool("DEBUG", default=True)
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["localhost", "127.0.0.1", "0.0.0.0"])
 
@@ -99,13 +99,14 @@ REST_FRAMEWORK = {
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": env("DB_NAME"),
-        "USER": env("DB_USER"),
-        "PASSWORD": env("DB_PASSWORD"),
-        "HOST": env("DB_HOST"),
-        "PORT": env("DB_PORT"),
+        "NAME": 'neondb',
+        "USER": 'neondb_owner',
+        "PASSWORD": 'npg_y8NzMdbsZ1rC',
+        "HOST": 'ep-spring-dust-adj3ru3c-pooler.c-2.us-east-1.aws.neon.tech',
+        "PORT": '5432',
     }
 }
+
 
 
 # Password validation
